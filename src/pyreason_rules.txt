@@ -1,0 +1,2 @@
+# Predicate names per candidate UCI are registered in pyreason_move_selection.installMoveRankRules.
+# Facts supplied each turn: Capture, Check, Center, Safe, TradeUp, PinOk, KingPress, Cramp, Develop, UnderFire, QValue (optional).
