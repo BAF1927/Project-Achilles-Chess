@@ -1,10 +1,10 @@
-# Project Achilles — PyReason Chess
+# Project Achilles, PyReason Chess
 
 ## How this project began
 
-On the **night of March 16**, **Jonathan Hoster** (Associate Director for Undergraduate Admissions and Recruitment, **College of Engineering**) sent me a **LinkedIn** message about an internship with **Leibniz Lab**. He described a group dedicated to **unifying reasoning and learning** in AI: how humans both **learn from experience** and **reason with symbols** (math, code, logic)—and how hybrid approaches (often called **neurosymbolic**) try to bring **deep learning** and **logical inference** into the same pipeline. The lab works on areas like **metacognition**, **temporal logic programming**, **abductive inference**, and **deep neural networks**, with applications from industrial systems to medicine. **Applicants were strongly encouraged** to know **PyTorch** and **PyReason**.
+On the **night of March 16**, **Jonathan Hoster** (Associate Director for Undergraduate Admissions and Recruitment, **College of Engineering**) sent me a **LinkedIn** message about an internship with **Leibniz Lab**. He described a group dedicated to **unifying reasoning and learning** in AI: how humans both **learn from experience** and **reason with symbols** (math, code, logic), and how hybrid approaches (often called **neurosymbolic**) try to bring **deep learning** and **logical inference** into the same pipeline. The lab works on areas like **metacognition**, **temporal logic programming**, **abductive inference**, and **deep neural networks**, with applications from industrial systems to medicine. **Applicants were strongly encouraged** to know **PyTorch** and **PyReason**.
 
-I already had **Harvard CS50 Introduction to Artificial Intelligence**, but I had not lived in **PyReason** or in tight **game-training loops** the way this role hinted at. I wanted **research of my own** on a clock: **could I build a chess AI in about ten days** that **actually learns**, get **hands-on PyReason**, and learn the **same vocabulary** people use in **reinforcement learning** and agent papers—not just finish a course? I knew **pygame** from **tic-tac-toe**; **chess** was the step up—still visual, but deep enough that shortcuts would show.
+I already had **Harvard CS50 Introduction to Artificial Intelligence**, but I had not lived in **PyReason** or in tight **game training loops** the way this role hinted at. I wanted **research of my own** on a clock: **could I build a chess AI in about ten days** that **actually learns**, get **hands on PyReason**, and learn the **same vocabulary** people use in **reinforcement learning** and agent papers, not just finish a course? I knew **pygame** from **tic tac toe**. **Chess** was the step up, still visual, but deep enough that shortcuts would show.
 
 **I started the next morning, March 17**: reading how people train game-playing agents and turning that into a real pygame + PyReason build.
 
@@ -12,9 +12,9 @@ I already had **Harvard CS50 Introduction to Artificial Intelligence**, but I ha
 
 ## Why go through the challenge
 
-I have always been drawn to **research** and **AI development**: the desire to use the **power of logic** to make tools that **reason**, not only pattern-match, and to look for ways to build something **meaningful**—systems you can **inspect** and argue about, not only black boxes. That instinct matches what **Leibniz Lab** stands for: **reasoning and learning** strengthening each other.
+I have always been drawn to **research** and **AI development**: the desire to use the **power of logic** to make tools that **reason**, not only pattern match, and to look for ways to build something **meaningful**, systems you can **inspect** and argue about, not only black boxes. That instinct matches what **Leibniz Lab** stands for: **reasoning and learning** strengthening each other.
 
-**My aspiration** here was simple to say and hard to do: **show up**, pick up an unfamiliar stack on a deadline, and **ship runnable work** that belongs in that world. This repository is a **sample of my commitment to learn**—read what I need, **run the code**, **iterate**, and treat the lab as a direction I want to **grow into**, not only a line on my screen.
+**My aspiration** here was simple to say and hard to do: **show up**, pick up an unfamiliar stack on a deadline, and **ship runnable work** that belongs in that world. This repository is a **sample of my commitment to learn**. I read what I need, **run the code**, **iterate**, and treat the lab as a direction I want to **grow into**, not only a line on my screen.
 
 ---
 
@@ -24,9 +24,9 @@ Chess is a **war game**. I started with a **hypothesis**: train **Easy**, **Medi
 
 Then I **sparred with my own AI** and the personality showed up. It **threw itself at checks** and **king pressure** like nothing could touch it. It lunged at **queen tension** I would never treat as a free lunch. Against **me**, once I **took the queen** or forced that kind of collapse, the position **died fast**: fierce early fight, **one decisive wound**. That is the myth of **Achilles** in one chess sitting. Not invincible, but **vulnerable in a specific way**.
 
-That is when I **jumped concepts**. Not just “Hard again,” but **one champion lane**: **Achilles** as a **focused warrior**—same PyReason **weight profile** as Hard in the shipped files, but its own **`qtable_achilles.json`**, trained with a **heavier recipe** that bakes in what I saw on the board. His true **Achilles heel** in practice is **lack of training**: the symbolic brain is there; the **memory file** only gets **dangerous** when you **grind games** into it.
+That is when I **jumped concepts**. Not just “Hard again,” but **one champion lane**: **Achilles** as a **focused warrior**. Same PyReason **weight profile** as Hard in the shipped files, but its own **`qtable_achilles.json`**, trained with a **heavier recipe** that bakes in what I saw on the board. His true **Achilles heel** in practice is **lack of training**: the symbolic brain is there; the **memory file** only gets **dangerous** when you **grind games** into it.
 
-After I put real hours into that lane, I put **Achilles** in front of **friends** who play chess—and **he beat several of them**. I still know how to wound him; the arc I care about is **hypothesis → fight the bot → see the queen/check story → rebuild the training objective → train like it matters → let it win in the wild**.
+After I put real hours into that lane, I put **Achilles** in front of **friends** who play chess, and **he beat several of them**. I still know how to wound him. The arc I care about is **hypothesis, fight the bot, see the queen/check story, rebuild the training objective, train like it matters, let it win in the wild**.
 
 ---
 
@@ -54,11 +54,11 @@ When a game ends, training **walks the move list backward**:
 1. **Bellman backups** (`updateQ` / `applyBellmanBackup` in `qtable.py`): blend **immediate reward** with **value bootstrapped** from the **next** position.
 2. **Terminal outcome** (mate/draw from White’s view) **decays by 0.98** per step backward (`trainQ.py`) so the **ending** still **whispers** into **earlier** moves.
 
-**Achilles-only:** `applyAchillesShaping` **replays** the game and **nudges** rewards again: **shuttle** penalties, **under-fire** terms for **queen/rook** under attack, **hindsight** that **spreads pain backward** when White **captures a Black major**—so the table learns **major losses hurt the whole sequence**, not only the capture ply.
+**Achilles only:** `applyAchillesShaping` **replays** the game and **nudges** rewards again: **shuttle** penalties, **under fire** terms for **queen/rook** under attack, **hindsight** that **spreads pain backward** when White **captures a Black major**, so the table learns **major losses hurt the whole sequence**, not only the capture ply.
 
 #### Achilles in the repo
 
-**Achilles** = **Hard-style weights** + **`qtable_achilles.json`** + **Achilles shaping** + **longer training**. Menu difficulty does not “cheat”; strength is mostly **data and the extra reward surgery** above. *(Friends’ games are **anecdote**, not a benchmark—but they matched what I saw in **table growth** and fewer **obvious** shuttle/material blunders.)*
+**Achilles** = **Hard style weights** + **`qtable_achilles.json`** + **Achilles shaping** + **longer training**. Menu difficulty does not “cheat”; strength is mostly **data and the extra reward surgery** above. *(Friends’ games are **anecdote**, not a benchmark, but they matched what I saw in **table growth** and fewer **obvious** shuttle/material blunders.)*
 
 ---
 
@@ -69,6 +69,7 @@ Research should **open doors**, not gatekeep. I read how people train game-playi
 | What people say | In plain English | Where it lives here |
 |-----------------|------------------|---------------------|
 | **State / action** | The **board position** and **one move** you are scoring | A normalized position key plus the move string (UCI) |
+| **UCI** | A standard chess move string, for example `e2e4` or `e7e8q` | Move keys from `move.uci()` and Q-table entries |
 | **Q-value** | A learned **score for "this move, from this position"** | `qtable_*.json`; optional **QValue** signal for PyReason |
 | **Bellman-style update** | After you see a reward and the next board, **nudge** the stored score toward: *what you got now + credit for how good the next situation looks* | `applyBellmanBackup` in `qtable.py` |
 | **Discount and step size** | **How much the future counts** vs. right now; **how fast** you move the score when new games teach you | `discountGamma`, `learningRateAlpha` in the saved table files |
@@ -77,11 +78,11 @@ Research should **open doors**, not gatekeep. I read how people train game-playi
 | **Gaussian noise / mutation** | **Small random nudges** to the weight numbers so you **try nearby strategies** and search for better ones | `train.py` when mutating `Weights` |
 | **Rule-based ranking** | Each tactic (**Capture**, **Check**, **Center**, …) feeds a **single combined ranking** for that move in PyReason | `pyreason_move_selection.py` (rules like “Ranked follows from Capture,” and so on) |
 
-**PyTorch vs. this project’s “Q”:** The lab had us set up **PyTorch** as part of the broader toolkit; I installed it like everyone else, next to **PyReason** and the rest. In **many** projects, the “Q” scores live inside a **neural network** built with PyTorch. **Here** the “Q” memory is a **simple table in JSON** updated with straight Python math, so you can **open the file and see the numbers**. Same **family of ideas** (learning move quality from experience); lighter **machinery** so a ten-day build stays readable. PyTorch is still on my machine for the lab path; this folder’s game code just does not import it for storing Q.
+**PyTorch vs. this project’s “Q”:** The lab had us set up **PyTorch** as part of the broader toolkit; I installed it like everyone else, next to **PyReason** and the rest. In **many** projects, the “Q” scores live inside a **neural network** built with PyTorch. **Here** the “Q” memory is a **simple table in JSON** updated with straight Python math, so you can **open the file and see the numbers**. Same **family of ideas** (learning move quality from experience). The machinery is lighter, so a ten day build stays readable. PyTorch is still on my machine for the lab path; this folder’s game code just does not import it for storing Q.
 
 ---
 
-## Ten-day arc (March 17 → March 26)
+## Ten day arc (March 17 to March 26)
 
 Some days were reading, some were coding, some were chasing bugs. **Order is real**; hours bounced around.
 
@@ -132,7 +133,7 @@ python -m src.main
 
 **Controls:** White picks a piece, then a square. **`R`** or the **Reset** button; **`ESC`** quits.
 
-**Difficulties:** **Easy**, **Medium**, **Hard** (shared training curriculum, different amounts of learning), and **Achilles** (same **weight profile** as Hard in the shipped JSON, but its own **`qtable_achilles.json`** and **heavier training recipe**—the “focused warrior” track from the story above).
+**Difficulties:** **Easy**, **Medium**, **Hard** (shared training curriculum, different amounts of learning), and **Achilles** (same **weight profile** as Hard in the shipped JSON, but its own **`qtable_achilles.json`** and **heavier training recipe**, the “focused warrior” track from the story above).
 
 ---
 
