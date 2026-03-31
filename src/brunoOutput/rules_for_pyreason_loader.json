@@ -1,0 +1,32 @@
+[
+  {
+    "rule_text": "citizenOf(x,y) : [1,1] <-1 bornIn(x,z) : [1,1], cityIn(z,y) : [1,1]",
+    "name": "citizenFromBirthCity",
+    "infer_edges": true,
+    "set_static": false
+  },
+  {
+    "rule_text": "livesInCountry(x,y) : [1,1] <-1 livesIn(x,z) : [1,1], cityIn(z,y) : [1,1]",
+    "name": "residenceFromCity",
+    "infer_edges": true,
+    "set_static": false
+  },
+  {
+    "rule_text": "employerCountry(x,y) : [1,1] <-1 worksAt(x,z) : [1,1], companyHeadquarteredIn(z,y) : [1,1]",
+    "name": "workCountryFromHeadquarters",
+    "infer_edges": true,
+    "set_static": false
+  },
+  {
+    "rule_text": "speaksLanguage(x,y) : [1,1] <-1 bornIn(x,c) : [1,1], cityIn(c,w) : [1,1], officialLanguage(w,y) : [1,1]",
+    "name": "languageFromBirthChain",
+    "infer_edges": true,
+    "set_static": false
+  },
+  {
+    "rule_text": "speaksLanguage(x,y) : [1,1] <-1 citizenOf(x,w) : [1,1], officialLanguage(w,y) : [1,1]",
+    "name": "languageFromCitizenship",
+    "infer_edges": true,
+    "set_static": false
+  }
+]

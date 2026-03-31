@@ -1,0 +1,32 @@
+Leibniz Lab (March 2026) — Summary of Findings
+
+This project studies how llm's suggestions and
+rule-based reasoning can work together on a knowledge graph.
+We begin from a small YAGO3-10 graph (GraphML), then ask an
+LLM to generate grounding facts about people, cities,
+companies, and countries, and finally run PyReason to infer
+new relationships that were not explicitly written in the
+starting graph.
+
+In the results image, this process is visible as layered
+evidence: known background relations, LLM-provided links,
+and stronger inferred links that connect people to countries
+and languages through rule chains. In practical terms, the
+graph shows that the system can move from isolated facts. 
+For example, where someone was born or works.
+This leads to meaningful conclusions such as finiding citizenship, residence country, employer
+country, and spoken language, in a transparent way.
+
+The findings are that inference is explainable and traceable.
+The final links are not random predictions, but consequences
+of explicit rules and supporting facts. This is important
+for non-technical users because each conclusion in the graph
+can be explained in plain language ("this person is linked
+to this country because of birthplace and city-country data")
+rather than treated as a black-box output.
+
+The visual result supports the core research claim.
+Combining graph knowledge with LLM grounding and
+symbolic reasoning increases coverage while preserving
+interpretability.
+

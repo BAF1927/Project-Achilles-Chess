@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="companyHeadquarteredIn" attr.type="long" />
+  <key id="d1" for="edge" attr.name="officialLanguage" attr.type="long" />
+  <key id="d0" for="edge" attr.name="cityIn" attr.type="long" />
+  <graph edgedefault="directed">
+    <node id="London" />
+    <node id="United_Kingdom" />
+    <node id="Madrid" />
+    <node id="Spain" />
+    <node id="Hartlepool" />
+    <node id="England" />
+    <node id="Google" />
+    <node id="United_States" />
+    <node id="Spanish_language" />
+    <node id="English_language" />
+    <edge source="London" target="United_Kingdom">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="Madrid" target="Spain">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="Spain" target="Spanish_language">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="Hartlepool" target="England">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="England" target="English_language">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="Google" target="United_States">
+      <data key="d2">1</data>
+    </edge>
+  </graph>
+</graphml>

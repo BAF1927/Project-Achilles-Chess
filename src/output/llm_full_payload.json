@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "generatedBy": "openai_chat_completions",
+    "model": "gpt-4o-mini",
+    "maxNaturalLanguageExamplesPerRule": 5,
+    "maxPyreasonFactsPerRule": 5
+  },
+  "naturalLanguageByRuleName": {
+    "citizenFromBirthCity": [
+      "A person born in Hartlepool is a citizen of England.",
+      "If someone is born in London, they are a citizen of the United Kingdom.",
+      "A child born in Madrid will be a citizen of Spain.",
+      "An individual born in a city that is in a country is a citizen of that country.",
+      "People born in cities are often considered citizens of the country those cities are located in."
+    ],
+    "residenceFromCity": [
+      "If John lives in Hartlepool, he lives in England.",
+      "If Maria lives in Madrid, she lives in Spain.",
+      "If Sarah lives in London, she lives in the United Kingdom.",
+      "If a person lives in a city, they live in the country where that city is located.",
+      "If someone resides in a city, they are also a resident of the corresponding country."
+    ],
+    "workCountryFromHeadquarters": [
+      "If John works at Google, he is employed in the United States.",
+      "Maria works at a company headquartered in Spain, so she works in Spain.",
+      "If a person is employed at Google, they work in the United States.",
+      "David works at a company based in England, thus he works in England.",
+      "If Sarah is employed by a firm headquartered in London, she works in the United Kingdom."
+    ],
+    "languageFromBirthChain": [
+      "A person born in London speaks English.",
+      "Someone born in Madrid speaks Spanish.",
+      "If a child is born in Hartlepool, they will speak English.",
+      "A resident of England will likely speak English.",
+      "A person born in Spain is expected to speak Spanish."
+    ],
+    "languageFromCitizenship": [
+      "A person born in England speaks English.",
+      "Someone who is a citizen of Spain speaks Spanish.",
+      "If you are born in London, you likely speak English.",
+      "A citizen of the United Kingdom speaks English.",
+      "People from Madrid are expected to speak Spanish."
+    ]
+  },
+  "pyreasonFacts": [
+    {
+      "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]",
+      "name": "llmFact_citizenFromBirthCity_0",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+      "name": "llmFact_citizenFromBirthCity_1",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Alice_Johnson,London):[1,1]",
+      "name": "llmFact_citizenFromBirthCity_2",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Bob_Brown,Hartlepool):[1,1]",
+      "name": "llmFact_citizenFromBirthCity_3",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]",
+      "name": "llmFact_citizenFromBirthCity_4",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(John_Harper,Hartlepool):[1,1]",
+      "name": "llmFact_residenceFromCity_0",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(Maria_Gonzalez,Madrid):[1,1]",
+      "name": "llmFact_residenceFromCity_1",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(Sarah_Johnson,London):[1,1]",
+      "name": "llmFact_residenceFromCity_2",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(John_Harper,England):[1,1]",
+      "name": "llmFact_residenceFromCity_3",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Maria_Gonzalez,Spain):[1,1]",
+      "name": "llmFact_residenceFromCity_4",
+      "static": true
+    },
+    {
+      "fact_text": "worksAt(John_Smith,Google):[1,1]",
+      "name": "llmFact_workCountryFromHeadquarters_0",
+      "static": true
+    },
+    {
+      "fact_text": "worksAt(Maria_Garcia,Google):[1,1]",
+      "name": "llmFact_workCountryFromHeadquarters_1",
+      "static": true
+    },
+    {
+      "fact_text": "worksAt(David_Brown,Google):[1,1]",
+      "name": "llmFact_workCountryFromHeadquarters_2",
+      "static": true
+    },
+    {
+      "fact_text": "worksAt(Sarah_Johnson,Google):[1,1]",
+      "name": "llmFact_workCountryFromHeadquarters_3",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(John_Smith,United_States):[1,1]",
+      "name": "llmFact_workCountryFromHeadquarters_4",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(John_Smith,London):[1,1]",
+      "name": "llmFact_languageFromBirthChain_0",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+      "name": "llmFact_languageFromBirthChain_1",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Alice_Johnson,Hartlepool):[1,1]",
+      "name": "llmFact_languageFromBirthChain_2",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Bob_Brown,London):[1,1]",
+      "name": "llmFact_languageFromBirthChain_3",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]",
+      "name": "llmFact_languageFromBirthChain_4",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]",
+      "name": "llmFact_languageFromCitizenship_0",
+      "static": true
+    },
+    {
+      "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+      "name": "llmFact_languageFromCitizenship_1",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(Emily_Johnson,London):[1,1]",
+      "name": "llmFact_languageFromCitizenship_2",
+      "static": true
+    },
+    {
+      "fact_text": "livesIn(Robert_Brown,Hartlepool):[1,1]",
+      "name": "llmFact_languageFromCitizenship_3",
+      "static": true
+    },
+    {
+      "fact_text": "worksAt(Alice_Davis,Google):[1,1]",
+      "name": "llmFact_languageFromCitizenship_4",
+      "static": true
+    }
+  ]
+}

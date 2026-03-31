@@ -1,0 +1,707 @@
+{
+  "graphmlRelativePath": "src/data/yago_subset.graphml",
+  "rulesRelativePath": "src/data/rules.json",
+  "llmGeneration": {
+    "mode": "openai",
+    "model": "gpt-4o-mini",
+    "openAiTranscriptRelativePath": "src/brunoOutput/llm_openai_prompts_and_replies.json"
+  },
+  "llmFullPayloadRelativePath": "src/brunoOutput/llm_full_payload.json",
+  "llmFactsWrittenRelativePath": "src/brunoOutput/llm_facts_pyreason.json",
+  "ruleTraceEdgesCsvRelativePath": "src/brunoOutput/inference_rule_trace_edges.csv",
+  "inferredEdgesByPredicate": {
+    "citizenOf": [
+      {
+        "sourceNode": "John_Smith",
+        "targetNode": "England",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "John_Smith",
+        "targetNode": "United_Kingdom",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Maria_Garcia",
+        "targetNode": "Spain",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Alice_Johnson",
+        "targetNode": "England",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Alice_Johnson",
+        "targetNode": "United_Kingdom",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Bob_Brown",
+        "targetNode": "England",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Bob_Brown",
+        "targetNode": "United_Kingdom",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Carla_Sanchez",
+        "targetNode": "Spain",
+        "bound": "[1.0, 1.0]"
+      }
+    ],
+    "livesInCountry": [
+      {
+        "sourceNode": "John_Harper",
+        "targetNode": "England",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Maria_Gonzalez",
+        "targetNode": "Spain",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Sarah_Johnson",
+        "targetNode": "United_Kingdom",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Emily_Johnson",
+        "targetNode": "United_Kingdom",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Robert_Brown",
+        "targetNode": "England",
+        "bound": "[1.0, 1.0]"
+      }
+    ],
+    "employerCountry": [
+      {
+        "sourceNode": "John_Smith",
+        "targetNode": "United_States",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Maria_Garcia",
+        "targetNode": "United_States",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "David_Brown",
+        "targetNode": "United_States",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Sarah_Johnson",
+        "targetNode": "United_States",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Alice_Davis",
+        "targetNode": "United_States",
+        "bound": "[1.0, 1.0]"
+      }
+    ],
+    "speaksLanguage": [
+      {
+        "sourceNode": "John_Smith",
+        "targetNode": "English_language",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Maria_Garcia",
+        "targetNode": "Spanish_language",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Bob_Brown",
+        "targetNode": "English_language",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Carla_Sanchez",
+        "targetNode": "Spanish_language",
+        "bound": "[1.0, 1.0]"
+      },
+      {
+        "sourceNode": "Alice_Johnson",
+        "targetNode": "English_language",
+        "bound": "[1.0, 1.0]"
+      }
+    ]
+  },
+  "inferredEdgesWatchable": [
+    {
+      "headPredicate": "citizenOf",
+      "watchableRuleTitles": [
+        "Citizenship From Birth City"
+      ],
+      "ruleNames": [
+        "citizenFromBirthCity"
+      ],
+      "edgeCount": 8,
+      "edges": [
+        {
+          "sourceNode": "John_Smith",
+          "targetNode": "England",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "John_Smith",
+          "targetNode": "United_Kingdom",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Maria_Garcia",
+          "targetNode": "Spain",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Alice_Johnson",
+          "targetNode": "England",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Alice_Johnson",
+          "targetNode": "United_Kingdom",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Bob_Brown",
+          "targetNode": "England",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Bob_Brown",
+          "targetNode": "United_Kingdom",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Carla_Sanchez",
+          "targetNode": "Spain",
+          "bound": "[1.0, 1.0]"
+        }
+      ]
+    },
+    {
+      "headPredicate": "livesInCountry",
+      "watchableRuleTitles": [
+        "Country Of Residence"
+      ],
+      "ruleNames": [
+        "residenceFromCity"
+      ],
+      "edgeCount": 5,
+      "edges": [
+        {
+          "sourceNode": "John_Harper",
+          "targetNode": "England",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Maria_Gonzalez",
+          "targetNode": "Spain",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Sarah_Johnson",
+          "targetNode": "United_Kingdom",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Emily_Johnson",
+          "targetNode": "United_Kingdom",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Robert_Brown",
+          "targetNode": "England",
+          "bound": "[1.0, 1.0]"
+        }
+      ]
+    },
+    {
+      "headPredicate": "employerCountry",
+      "watchableRuleTitles": [
+        "Employment Country (Company HQ)"
+      ],
+      "ruleNames": [
+        "workCountryFromHeadquarters"
+      ],
+      "edgeCount": 5,
+      "edges": [
+        {
+          "sourceNode": "John_Smith",
+          "targetNode": "United_States",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Maria_Garcia",
+          "targetNode": "United_States",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "David_Brown",
+          "targetNode": "United_States",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Sarah_Johnson",
+          "targetNode": "United_States",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Alice_Davis",
+          "targetNode": "United_States",
+          "bound": "[1.0, 1.0]"
+        }
+      ]
+    },
+    {
+      "headPredicate": "speaksLanguage",
+      "watchableRuleTitles": [
+        "Language From Birth City And Country",
+        "Language From Citizenship And Official Languages"
+      ],
+      "ruleNames": [
+        "languageFromBirthChain",
+        "languageFromCitizenship"
+      ],
+      "edgeCount": 5,
+      "edges": [
+        {
+          "sourceNode": "John_Smith",
+          "targetNode": "English_language",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Maria_Garcia",
+          "targetNode": "Spanish_language",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Bob_Brown",
+          "targetNode": "English_language",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Carla_Sanchez",
+          "targetNode": "Spanish_language",
+          "bound": "[1.0, 1.0]"
+        },
+        {
+          "sourceNode": "Alice_Johnson",
+          "targetNode": "English_language",
+          "bound": "[1.0, 1.0]"
+        }
+      ]
+    }
+  ],
+  "ruleTraceEdgeRecordCount": 313,
+  "ruleTraceEdgeSample": [
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Smith",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Alice_Johnson",
+      "targetNode": "London",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Bob_Brown",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Carla_Sanchez",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Harper",
+      "targetNode": "Hartlepool",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Gonzalez",
+      "targetNode": "Madrid",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Sarah_Johnson",
+      "targetNode": "London",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Harper",
+      "targetNode": "England",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Gonzalez",
+      "targetNode": "Spain",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Smith",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "David_Brown",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Sarah_Johnson",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Smith",
+      "targetNode": "United_States",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Smith",
+      "targetNode": "London",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Alice_Johnson",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Bob_Brown",
+      "targetNode": "London",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Carla_Sanchez",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "John_Smith",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Emily_Johnson",
+      "targetNode": "London",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Robert_Brown",
+      "targetNode": "Hartlepool",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 0,
+      "fixedPointOperation": 0,
+      "sourceNode": "Alice_Davis",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "John_Smith",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Alice_Johnson",
+      "targetNode": "London",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Bob_Brown",
+      "targetNode": "Hartlepool",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Carla_Sanchez",
+      "targetNode": "Madrid",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "John_Harper",
+      "targetNode": "Hartlepool",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Maria_Gonzalez",
+      "targetNode": "Madrid",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Sarah_Johnson",
+      "targetNode": "London",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "John_Harper",
+      "targetNode": "England",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Maria_Gonzalez",
+      "targetNode": "Spain",
+      "label": "bornIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "John_Smith",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Maria_Garcia",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "David_Brown",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "Sarah_Johnson",
+      "targetNode": "Google",
+      "label": "worksAt",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    },
+    {
+      "timeStep": 1,
+      "fixedPointOperation": 1,
+      "sourceNode": "John_Smith",
+      "targetNode": "United_States",
+      "label": "livesIn",
+      "boundLower": 1.0,
+      "boundUpper": 1.0,
+      "occurredDueTo": "Fact"
+    }
+  ]
+}

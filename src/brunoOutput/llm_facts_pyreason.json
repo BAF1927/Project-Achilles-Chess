@@ -1,0 +1,127 @@
+[
+  {
+    "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]",
+    "name": "llmFact_citizenFromBirthCity_0",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+    "name": "llmFact_citizenFromBirthCity_1",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Alice_Johnson,London):[1,1]",
+    "name": "llmFact_citizenFromBirthCity_2",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Bob_Brown,Hartlepool):[1,1]",
+    "name": "llmFact_citizenFromBirthCity_3",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]",
+    "name": "llmFact_citizenFromBirthCity_4",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(John_Harper,Hartlepool):[1,1]",
+    "name": "llmFact_residenceFromCity_0",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(Maria_Gonzalez,Madrid):[1,1]",
+    "name": "llmFact_residenceFromCity_1",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(Sarah_Johnson,London):[1,1]",
+    "name": "llmFact_residenceFromCity_2",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(John_Harper,England):[1,1]",
+    "name": "llmFact_residenceFromCity_3",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Maria_Gonzalez,Spain):[1,1]",
+    "name": "llmFact_residenceFromCity_4",
+    "static": true
+  },
+  {
+    "fact_text": "worksAt(John_Smith,Google):[1,1]",
+    "name": "llmFact_workCountryFromHeadquarters_0",
+    "static": true
+  },
+  {
+    "fact_text": "worksAt(Maria_Garcia,Google):[1,1]",
+    "name": "llmFact_workCountryFromHeadquarters_1",
+    "static": true
+  },
+  {
+    "fact_text": "worksAt(David_Brown,Google):[1,1]",
+    "name": "llmFact_workCountryFromHeadquarters_2",
+    "static": true
+  },
+  {
+    "fact_text": "worksAt(Sarah_Johnson,Google):[1,1]",
+    "name": "llmFact_workCountryFromHeadquarters_3",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(John_Smith,United_States):[1,1]",
+    "name": "llmFact_workCountryFromHeadquarters_4",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(John_Smith,London):[1,1]",
+    "name": "llmFact_languageFromBirthChain_0",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+    "name": "llmFact_languageFromBirthChain_1",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Alice_Johnson,Hartlepool):[1,1]",
+    "name": "llmFact_languageFromBirthChain_2",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Bob_Brown,London):[1,1]",
+    "name": "llmFact_languageFromBirthChain_3",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]",
+    "name": "llmFact_languageFromBirthChain_4",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]",
+    "name": "llmFact_languageFromCitizenship_0",
+    "static": true
+  },
+  {
+    "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]",
+    "name": "llmFact_languageFromCitizenship_1",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(Emily_Johnson,London):[1,1]",
+    "name": "llmFact_languageFromCitizenship_2",
+    "static": true
+  },
+  {
+    "fact_text": "livesIn(Robert_Brown,Hartlepool):[1,1]",
+    "name": "llmFact_languageFromCitizenship_3",
+    "static": true
+  },
+  {
+    "fact_text": "worksAt(Alice_Davis,Google):[1,1]",
+    "name": "llmFact_languageFromCitizenship_4",
+    "static": true
+  }
+]

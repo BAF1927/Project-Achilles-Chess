@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "model": "gpt-4o-mini",
+    "maxNaturalLanguageExamplesPerRule": 5,
+    "maxPyreasonFactsPerRule": 5
+  },
+  "entries": [
+    {
+      "ruleName": "citizenFromBirthCity",
+      "openAiUserPrompt": "You are helping with a university knowledge-graph assignment using PyReason.\n\nPyReason edge facts look like: predicate(EntityA,EntityB):[1,1]\nUse YAGO3-10 style identifiers: underscores, no spaces (e.g. Tom_Cruise, United_States).\n\nRULE NAME: citizenFromBirthCity\nLOGIC RULE (head inferred from body): citizenOf(x,y) : [1,1] <-1 bornIn(x,z) : [1,1], cityIn(z,y) : [1,1]\nINTENT: If a person is born in a city and the city is in a country, infer citizenship for that country.\n\nKNOWN NODES IN THE GRAPH (you may ONLY use these as endpoints for NEW facts, unless you introduce a new person that connects to existing city/company nodes already listed):\nEngland, English_language, Google, Hartlepool, London, Madrid, Spain, Spanish_language, United_Kingdom, United_States\n\nEXISTING KG FACTS (do not duplicate the same predicate+pair; you may add missing body literals such as bornIn, livesIn, worksAt):\ncityIn(Hartlepool,England)\ncityIn(London,United_Kingdom)\ncityIn(Madrid,Spain)\ncompanyHeadquarteredIn(Google,United_States)\nofficialLanguage(England,English_language)\nofficialLanguage(Spain,Spanish_language)\n\nTASK:\n- Propose up to 5 plausible REAL-WORLD style suggestions for this single rule (short English sentences in naturalLanguageExamples).\n- Propose up to 5 NEW PyReason edge fact(s) in pyreasonFacts using ONLY: bornIn, livesIn, worksAt (when they help ground **this** rule or the citizenship chain).\n- Every subject/object in pyreasonFacts must appear in the KNOWN NODES list, except you may use a NEW person name as the FIRST argument of bornIn/livesIn/worksAt if the second argument is already a known node (use underscores).\n- Each pyreasonFacts item\u2019s fact_text must be **only** the fact string ending with ``:[1,1]`` \u2014 never paste extra characters after the closing ``]`` (no ``}``, ``]}``, or stray quotes from the JSON structure).\n\nReturn ONLY one valid JSON object (straight \" double quotes only, no trailing commas; pyreasonFacts may be []):\n{\"ruleName\":\"citizenFromBirthCity\",\"naturalLanguageExamples\":[\"...\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(Some_Person,Some_City):[1,1]\",\"name\":\"llmFactRuleUnique\",\"static\":true}]}\n",
+      "openAiAssistantReply": "{\"ruleName\":\"citizenFromBirthCity\",\"naturalLanguageExamples\":[\"A person born in Hartlepool is a citizen of England.\",\"If someone is born in London, they are a citizen of the United Kingdom.\",\"A child born in Madrid will be a citizen of Spain.\",\"An individual born in a city that is in a country is a citizen of that country.\",\"People born in cities are often considered citizens of the country those cities are located in.\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(John_Smith,Hartlepool):[1,1]\"},{\"fact_text\":\"bornIn(Maria_Garcia,Madrid):[1,1]\"},{\"fact_text\":\"bornIn(Alice_Johnson,London):[1,1]\"},{\"fact_text\":\"bornIn(Bob_Brown,Hartlepool):[1,1]\"},{\"fact_text\":\"bornIn(Carla_Sanchez,Madrid):[1,1]\"}]}",
+      "parsedJson": {
+        "ruleName": "citizenFromBirthCity",
+        "naturalLanguageExamples": [
+          "A person born in Hartlepool is a citizen of England.",
+          "If someone is born in London, they are a citizen of the United Kingdom.",
+          "A child born in Madrid will be a citizen of Spain.",
+          "An individual born in a city that is in a country is a citizen of that country.",
+          "People born in cities are often considered citizens of the country those cities are located in."
+        ],
+        "pyreasonFacts": [
+          {
+            "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Alice_Johnson,London):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Bob_Brown,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]"
+          }
+        ]
+      }
+    },
+    {
+      "ruleName": "residenceFromCity",
+      "openAiUserPrompt": "You are helping with a university knowledge-graph assignment using PyReason.\n\nPyReason edge facts look like: predicate(EntityA,EntityB):[1,1]\nUse YAGO3-10 style identifiers: underscores, no spaces (e.g. Tom_Cruise, United_States).\n\nRULE NAME: residenceFromCity\nLOGIC RULE (head inferred from body): livesInCountry(x,y) : [1,1] <-1 livesIn(x,z) : [1,1], cityIn(z,y) : [1,1]\nINTENT: If a person lives in a city located in a country, infer they live in that country.\n\nKNOWN NODES IN THE GRAPH (you may ONLY use these as endpoints for NEW facts, unless you introduce a new person that connects to existing city/company nodes already listed):\nEngland, English_language, Google, Hartlepool, London, Madrid, Spain, Spanish_language, United_Kingdom, United_States\n\nEXISTING KG FACTS (do not duplicate the same predicate+pair; you may add missing body literals such as bornIn, livesIn, worksAt):\ncityIn(Hartlepool,England)\ncityIn(London,United_Kingdom)\ncityIn(Madrid,Spain)\ncompanyHeadquarteredIn(Google,United_States)\nofficialLanguage(England,English_language)\nofficialLanguage(Spain,Spanish_language)\n\nTASK:\n- Propose up to 5 plausible REAL-WORLD style suggestions for this single rule (short English sentences in naturalLanguageExamples).\n- Propose up to 5 NEW PyReason edge fact(s) in pyreasonFacts using ONLY: bornIn, livesIn, worksAt (when they help ground **this** rule or the citizenship chain).\n- Every subject/object in pyreasonFacts must appear in the KNOWN NODES list, except you may use a NEW person name as the FIRST argument of bornIn/livesIn/worksAt if the second argument is already a known node (use underscores).\n- Each pyreasonFacts item\u2019s fact_text must be **only** the fact string ending with ``:[1,1]`` \u2014 never paste extra characters after the closing ``]`` (no ``}``, ``]}``, or stray quotes from the JSON structure).\n\nReturn ONLY one valid JSON object (straight \" double quotes only, no trailing commas; pyreasonFacts may be []):\n{\"ruleName\":\"residenceFromCity\",\"naturalLanguageExamples\":[\"...\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(Some_Person,Some_City):[1,1]\",\"name\":\"llmFactRuleUnique\",\"static\":true}]}\n",
+      "openAiAssistantReply": "{\"ruleName\":\"residenceFromCity\",\"naturalLanguageExamples\":[\"If John lives in Hartlepool, he lives in England.\",\"If Maria lives in Madrid, she lives in Spain.\",\"If Sarah lives in London, she lives in the United Kingdom.\",\"If a person lives in a city, they live in the country where that city is located.\",\"If someone resides in a city, they are also a resident of the corresponding country.\"],\"pyreasonFacts\":[{\"fact_text\":\"livesIn(John_Harper,Hartlepool):[1,1]\"},{\"fact_text\":\"livesIn(Maria_Gonzalez,Madrid):[1,1]\"},{\"fact_text\":\"livesIn(Sarah_Johnson,London):[1,1]\"},{\"fact_text\":\"bornIn(John_Harper,England):[1,1]\"},{\"fact_text\":\"bornIn(Maria_Gonzalez,Spain):[1,1]\"}]}",
+      "parsedJson": {
+        "ruleName": "residenceFromCity",
+        "naturalLanguageExamples": [
+          "If John lives in Hartlepool, he lives in England.",
+          "If Maria lives in Madrid, she lives in Spain.",
+          "If Sarah lives in London, she lives in the United Kingdom.",
+          "If a person lives in a city, they live in the country where that city is located.",
+          "If someone resides in a city, they are also a resident of the corresponding country."
+        ],
+        "pyreasonFacts": [
+          {
+            "fact_text": "livesIn(John_Harper,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "livesIn(Maria_Gonzalez,Madrid):[1,1]"
+          },
+          {
+            "fact_text": "livesIn(Sarah_Johnson,London):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(John_Harper,England):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Maria_Gonzalez,Spain):[1,1]"
+          }
+        ]
+      }
+    },
+    {
+      "ruleName": "workCountryFromHeadquarters",
+      "openAiUserPrompt": "You are helping with a university knowledge-graph assignment using PyReason.\n\nPyReason edge facts look like: predicate(EntityA,EntityB):[1,1]\nUse YAGO3-10 style identifiers: underscores, no spaces (e.g. Tom_Cruise, United_States).\n\nRULE NAME: workCountryFromHeadquarters\nLOGIC RULE (head inferred from body): employerCountry(x,y) : [1,1] <-1 worksAt(x,z) : [1,1], companyHeadquarteredIn(z,y) : [1,1]\nINTENT: If a person works at a company headquartered in a country, infer employment in that country.\n\nKNOWN NODES IN THE GRAPH (you may ONLY use these as endpoints for NEW facts, unless you introduce a new person that connects to existing city/company nodes already listed):\nEngland, English_language, Google, Hartlepool, London, Madrid, Spain, Spanish_language, United_Kingdom, United_States\n\nEXISTING KG FACTS (do not duplicate the same predicate+pair; you may add missing body literals such as bornIn, livesIn, worksAt):\ncityIn(Hartlepool,England)\ncityIn(London,United_Kingdom)\ncityIn(Madrid,Spain)\ncompanyHeadquarteredIn(Google,United_States)\nofficialLanguage(England,English_language)\nofficialLanguage(Spain,Spanish_language)\n\nTASK:\n- Propose up to 5 plausible REAL-WORLD style suggestions for this single rule (short English sentences in naturalLanguageExamples).\n- Propose up to 5 NEW PyReason edge fact(s) in pyreasonFacts using ONLY: bornIn, livesIn, worksAt (when they help ground **this** rule or the citizenship chain).\n- Every subject/object in pyreasonFacts must appear in the KNOWN NODES list, except you may use a NEW person name as the FIRST argument of bornIn/livesIn/worksAt if the second argument is already a known node (use underscores).\n- Each pyreasonFacts item\u2019s fact_text must be **only** the fact string ending with ``:[1,1]`` \u2014 never paste extra characters after the closing ``]`` (no ``}``, ``]}``, or stray quotes from the JSON structure).\n\nReturn ONLY one valid JSON object (straight \" double quotes only, no trailing commas; pyreasonFacts may be []):\n{\"ruleName\":\"workCountryFromHeadquarters\",\"naturalLanguageExamples\":[\"...\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(Some_Person,Some_City):[1,1]\",\"name\":\"llmFactRuleUnique\",\"static\":true}]}\n",
+      "openAiAssistantReply": "{\"ruleName\":\"workCountryFromHeadquarters\",\"naturalLanguageExamples\":[\"If John works at Google, he is employed in the United States.\",\"Maria works at a company headquartered in Spain, so she works in Spain.\",\"If a person is employed at Google, they work in the United States.\",\"David works at a company based in England, thus he works in England.\",\"If Sarah is employed by a firm headquartered in London, she works in the United Kingdom.\"],\"pyreasonFacts\":[{\"fact_text\":\"worksAt(John_Smith,Google):[1,1]\"},{\"fact_text\":\"worksAt(Maria_Garcia,Google):[1,1]\"},{\"fact_text\":\"worksAt(David_Brown,Google):[1,1]\"},{\"fact_text\":\"worksAt(Sarah_Johnson,Google):[1,1]\"},{\"fact_text\":\"livesIn(John_Smith,United_States):[1,1]\"}]}",
+      "parsedJson": {
+        "ruleName": "workCountryFromHeadquarters",
+        "naturalLanguageExamples": [
+          "If John works at Google, he is employed in the United States.",
+          "Maria works at a company headquartered in Spain, so she works in Spain.",
+          "If a person is employed at Google, they work in the United States.",
+          "David works at a company based in England, thus he works in England.",
+          "If Sarah is employed by a firm headquartered in London, she works in the United Kingdom."
+        ],
+        "pyreasonFacts": [
+          {
+            "fact_text": "worksAt(John_Smith,Google):[1,1]"
+          },
+          {
+            "fact_text": "worksAt(Maria_Garcia,Google):[1,1]"
+          },
+          {
+            "fact_text": "worksAt(David_Brown,Google):[1,1]"
+          },
+          {
+            "fact_text": "worksAt(Sarah_Johnson,Google):[1,1]"
+          },
+          {
+            "fact_text": "livesIn(John_Smith,United_States):[1,1]"
+          }
+        ]
+      }
+    },
+    {
+      "ruleName": "languageFromBirthChain",
+      "openAiUserPrompt": "You are helping with a university knowledge-graph assignment using PyReason.\n\nPyReason edge facts look like: predicate(EntityA,EntityB):[1,1]\nUse YAGO3-10 style identifiers: underscores, no spaces (e.g. Tom_Cruise, United_States).\n\nRULE NAME: languageFromBirthChain\nLOGIC RULE (head inferred from body): speaksLanguage(x,y) : [1,1] <-1 bornIn(x,c) : [1,1], cityIn(c,w) : [1,1], officialLanguage(w,y) : [1,1]\nINTENT: Birth city in a country with an official language yields speaksLanguage to that language node.\n\nKNOWN NODES IN THE GRAPH (you may ONLY use these as endpoints for NEW facts, unless you introduce a new person that connects to existing city/company nodes already listed):\nEngland, English_language, Google, Hartlepool, London, Madrid, Spain, Spanish_language, United_Kingdom, United_States\n\nEXISTING KG FACTS (do not duplicate the same predicate+pair; you may add missing body literals such as bornIn, livesIn, worksAt):\ncityIn(Hartlepool,England)\ncityIn(London,United_Kingdom)\ncityIn(Madrid,Spain)\ncompanyHeadquarteredIn(Google,United_States)\nofficialLanguage(England,English_language)\nofficialLanguage(Spain,Spanish_language)\n\nTASK:\n- Propose up to 5 plausible REAL-WORLD style suggestions for this single rule (short English sentences in naturalLanguageExamples).\n- Propose up to 5 NEW PyReason edge fact(s) in pyreasonFacts using ONLY: bornIn, livesIn, worksAt (when they help ground **this** rule or the citizenship chain).\n- Every subject/object in pyreasonFacts must appear in the KNOWN NODES list, except you may use a NEW person name as the FIRST argument of bornIn/livesIn/worksAt if the second argument is already a known node (use underscores).\n- Each pyreasonFacts item\u2019s fact_text must be **only** the fact string ending with ``:[1,1]`` \u2014 never paste extra characters after the closing ``]`` (no ``}``, ``]}``, or stray quotes from the JSON structure).\n\nReturn ONLY one valid JSON object (straight \" double quotes only, no trailing commas; pyreasonFacts may be []):\n{\"ruleName\":\"languageFromBirthChain\",\"naturalLanguageExamples\":[\"...\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(Some_Person,Some_City):[1,1]\",\"name\":\"llmFactRuleUnique\",\"static\":true}]}\n",
+      "openAiAssistantReply": "{\n  \"ruleName\": \"languageFromBirthChain\",\n  \"naturalLanguageExamples\": [\n    \"A person born in London speaks English.\",\n    \"Someone born in Madrid speaks Spanish.\",\n    \"If a child is born in Hartlepool, they will speak English.\",\n    \"A resident of England will likely speak English.\",\n    \"A person born in Spain is expected to speak Spanish.\"\n  ],\n  \"pyreasonFacts\": [\n    {\"fact_text\":\"bornIn(John_Smith,London):[1,1]\"},\n    {\"fact_text\":\"bornIn(Maria_Garcia,Madrid):[1,1]\"},\n    {\"fact_text\":\"bornIn(Alice_Johnson,Hartlepool):[1,1]\"},\n    {\"fact_text\":\"bornIn(Bob_Brown,London):[1,1]\"},\n    {\"fact_text\":\"bornIn(Carla_Sanchez,Madrid):[1,1]\"}\n  ]\n}",
+      "parsedJson": {
+        "ruleName": "languageFromBirthChain",
+        "naturalLanguageExamples": [
+          "A person born in London speaks English.",
+          "Someone born in Madrid speaks Spanish.",
+          "If a child is born in Hartlepool, they will speak English.",
+          "A resident of England will likely speak English.",
+          "A person born in Spain is expected to speak Spanish."
+        ],
+        "pyreasonFacts": [
+          {
+            "fact_text": "bornIn(John_Smith,London):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Alice_Johnson,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Bob_Brown,London):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Carla_Sanchez,Madrid):[1,1]"
+          }
+        ]
+      }
+    },
+    {
+      "ruleName": "languageFromCitizenship",
+      "openAiUserPrompt": "You are helping with a university knowledge-graph assignment using PyReason.\n\nPyReason edge facts look like: predicate(EntityA,EntityB):[1,1]\nUse YAGO3-10 style identifiers: underscores, no spaces (e.g. Tom_Cruise, United_States).\n\nRULE NAME: languageFromCitizenship\nLOGIC RULE (head inferred from body): speaksLanguage(x,y) : [1,1] <-1 citizenOf(x,w) : [1,1], officialLanguage(w,y) : [1,1]\nINTENT: If someone is a citizen of a country, infer they speak that country's official language (from the KG), an alternate path alongside birth-city + officialLanguage.\n\nSPECIAL NOTES:\n- This rule\u2019s body includes citizenOf: those edges are **inferred** by the citizenFromBirthCity rule from bornIn + cityIn \u2014 do **not** output citizenOf as an LLM fact. officialLanguage is already in the KG. You may use an empty pyreasonFacts array if the examples suffice, or only add bornIn / livesIn / worksAt when useful.\n\nKNOWN NODES IN THE GRAPH (you may ONLY use these as endpoints for NEW facts, unless you introduce a new person that connects to existing city/company nodes already listed):\nEngland, English_language, Google, Hartlepool, London, Madrid, Spain, Spanish_language, United_Kingdom, United_States\n\nEXISTING KG FACTS (do not duplicate the same predicate+pair; you may add missing body literals such as bornIn, livesIn, worksAt):\ncityIn(Hartlepool,England)\ncityIn(London,United_Kingdom)\ncityIn(Madrid,Spain)\ncompanyHeadquarteredIn(Google,United_States)\nofficialLanguage(England,English_language)\nofficialLanguage(Spain,Spanish_language)\n\nTASK:\n- Propose up to 5 plausible REAL-WORLD style suggestions for this single rule (short English sentences in naturalLanguageExamples).\n- Propose up to 5 NEW PyReason edge fact(s) in pyreasonFacts using ONLY: bornIn, livesIn, worksAt (when they help ground **this** rule or the citizenship chain).\n- Every subject/object in pyreasonFacts must appear in the KNOWN NODES list, except you may use a NEW person name as the FIRST argument of bornIn/livesIn/worksAt if the second argument is already a known node (use underscores).\n- Each pyreasonFacts item\u2019s fact_text must be **only** the fact string ending with ``:[1,1]`` \u2014 never paste extra characters after the closing ``]`` (no ``}``, ``]}``, or stray quotes from the JSON structure).\n\nReturn ONLY one valid JSON object (straight \" double quotes only, no trailing commas; pyreasonFacts may be []):\n{\"ruleName\":\"languageFromCitizenship\",\"naturalLanguageExamples\":[\"...\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(Some_Person,Some_City):[1,1]\",\"name\":\"llmFactRuleUnique\",\"static\":true}]}\n",
+      "openAiAssistantReply": "{\"ruleName\":\"languageFromCitizenship\",\"naturalLanguageExamples\":[\"A person born in England speaks English.\",\"Someone who is a citizen of Spain speaks Spanish.\",\"If you are born in London, you likely speak English.\",\"A citizen of the United Kingdom speaks English.\",\"People from Madrid are expected to speak Spanish.\"],\"pyreasonFacts\":[{\"fact_text\":\"bornIn(John_Smith,Hartlepool):[1,1]\"},{\"fact_text\":\"bornIn(Maria_Garcia,Madrid):[1,1]\"},{\"fact_text\":\"livesIn(Emily_Johnson,London):[1,1]\"},{\"fact_text\":\"livesIn(Robert_Brown,Hartlepool):[1,1]\"},{\"fact_text\":\"worksAt(Alice_Davis,Google):[1,1]\"}]}",
+      "parsedJson": {
+        "ruleName": "languageFromCitizenship",
+        "naturalLanguageExamples": [
+          "A person born in England speaks English.",
+          "Someone who is a citizen of Spain speaks Spanish.",
+          "If you are born in London, you likely speak English.",
+          "A citizen of the United Kingdom speaks English.",
+          "People from Madrid are expected to speak Spanish."
+        ],
+        "pyreasonFacts": [
+          {
+            "fact_text": "bornIn(John_Smith,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "bornIn(Maria_Garcia,Madrid):[1,1]"
+          },
+          {
+            "fact_text": "livesIn(Emily_Johnson,London):[1,1]"
+          },
+          {
+            "fact_text": "livesIn(Robert_Brown,Hartlepool):[1,1]"
+          },
+          {
+            "fact_text": "worksAt(Alice_Davis,Google):[1,1]"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+source .venv/bin/activate
+LEIBNIZ_USE_BRUNO_OUTPUT=1 ./run_dashboard.sh
+cd "/Users/brunoarriolaflores/Downloads/CodingSchool/Internship Projects/Leibniz Lab Challenge"
+
+source .venv/bin/activate
+python -m src.runInference
+./run_dashboard.sh
+python -m src.cleanOutputs

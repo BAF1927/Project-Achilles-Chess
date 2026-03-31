@@ -1,4 +1,8 @@
-pygame
-python-chess
 pyreason
 networkx
+datasets
+python-dotenv
+certifi
+streamlit>=1.28.0
+pyvis>=0.3.2
+pandas>=2.0.0
